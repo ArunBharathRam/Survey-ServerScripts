@@ -1,2 +1,2 @@
-# Survey-ServerScripts
-Server scripts for the Survey Android Application
+# Syrvey-Server Scripts
+Contains php server scripts for Survey Application
