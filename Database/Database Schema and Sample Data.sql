@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 19, 2016 at 06:32 PM
--- Server version: 10.1.9-MariaDB
--- PHP Version: 5.6.15
+-- Generation Time: Jan 05, 2017 at 06:29 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `survey`
 --
+CREATE DATABASE IF NOT EXISTS `survey` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `survey`;
 
 -- --------------------------------------------------------
 
@@ -164,7 +166,7 @@ CREATE TABLE `survey` (
   `id` int(11) NOT NULL,
   `organization_id` int(11) NOT NULL,
   `title` varchar(80) NOT NULL,
-  `instrutions` varchar(255) NOT NULL,
+  `instructions` varchar(255) NOT NULL,
   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -172,7 +174,7 @@ CREATE TABLE `survey` (
 -- Dumping data for table `survey`
 --
 
-INSERT INTO `survey` (`id`, `organization_id`, `title`, `instrutions`, `created_on`) VALUES
+INSERT INTO `survey` (`id`, `organization_id`, `title`, `instructions`, `created_on`) VALUES
 (1, 1, 'Favourite Indian Food', 'This is a survey to find out the favourite Indian food from all parts of India', '2015-12-23 18:39:16'),
 (2, 2, 'Favourite Actor of India', 'A survey to find the favourite actor from all over India', '2015-12-23 18:59:45'),
 (3, 3, 'Favourite Actress of Kollywood', 'This is a survey to find the favourite actress of South India', '2015-12-23 19:09:53');
@@ -197,10 +199,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `is_google`, `last_login`) VALUES
-(1, 't', 't', 'e3b98a4da31a127d4bde6e43033f66ba274cab0eb7eb1c70ec41402bf6273dd8', 0, '2016-01-08 22:46:39'),
-(3, 'gn', 'gn', NULL, 1, '2015-12-25 17:05:41'),
-(5, '', 'g', NULL, 1, '2015-12-26 21:41:33'),
-(12, 'Prathab Murugan', 'jm.prathab@gmail.com', NULL, 1, '2016-01-08 22:53:01');
+(13, 'Prathab', 'jm.prathab@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 0, '2017-01-05 22:59:00'),
+(14, 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', 0, '2017-01-05 22:59:05');
 
 -- --------------------------------------------------------
 
@@ -309,7 +309,7 @@ ALTER TABLE `survey`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- Constraints for dumped tables
 --
